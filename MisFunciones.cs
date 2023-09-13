@@ -1,8 +1,8 @@
+using System.Text.Json.Serialization;
 using Boletin.Entities;
-using Ejercicio3.Entities;
-using Newtonsoft.Json;
+// using Newtonsoft.Json;
 
-namespace Boletin.Entities;
+namespace Boletin;
 
 public class MisFunciones
 {
@@ -33,8 +33,8 @@ public class MisFunciones
     }
     public static void SaveData(List<Estudiantes> lstListado)
     {
-        string json = Convert.SerializeObject(lstListado, Formatting.Indented);
-        File.WriteAllText("boletin.json", json);
+        // string json = JsonConvert.SerializeObject(lstListado, Formatting.Indented);
+        // File.WriteAllText("boletin.json", json);
     }
     public static List<Estudiantes> LoadData()
     {

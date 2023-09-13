@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using Boletin;
 using Boletin.Entities;
 
 internal class Program
@@ -31,8 +32,8 @@ internal class Program
                         byte opcionNotas = MisFunciones.MenuNotas();
                         if (opcionNotas != 0)
                         {
-                            // student.RegistroNota(estudiantes, opcionNotas);
-                            // MisFunciones.SaveData(estudiantes);
+                            student.RegistroNota(estudiantes, opcionNotas);
+                            MisFunciones.SaveData(estudiantes);
                         }
                         else
                         {
