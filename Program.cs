@@ -6,19 +6,23 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("+-----------------------------+");
-        Console.WriteLine("|        MENU PRINCIPAL       |");
-        Console.WriteLine("+-----------------------------+");
-        Console.WriteLine("| 1. Registrar Alumnos        |");
-        Console.WriteLine("| 2. Registrar Notas          |");
-        Console.WriteLine("| 3. Reportes e informes      |");
-        Console.WriteLine("| 0. Salir                    |");
-        Console.WriteLine("+-----------------------------+");
-        Console.Write("Seleccione una opción: ");
-        byte opcionMenu = Convert.ToByte(Console.ReadLine());
+        List<Estudiantes> estudiantes = new List<Estudiantes>();
+        Estudiantes student = new Estudiantes();
         bool cicloMenu = true;
+        // estudiantes = MisFunciones.LoadData();
         while (cicloMenu)
         {
+            Console.Clear();
+            Console.WriteLine("+-----------------------------+");
+            Console.WriteLine("|        MENU PRINCIPAL       |");
+            Console.WriteLine("+-----------------------------+");
+            Console.WriteLine("| 1. Registrar Alumnos        |");
+            Console.WriteLine("| 2. Registrar Notas          |");
+            Console.WriteLine("| 3. Reportes e informes      |");
+            Console.WriteLine("| 0. Salir                    |");
+            Console.WriteLine("+-----------------------------+");
+            Console.Write("Seleccione una opción: ");
+            byte opcionMenu = Convert.ToByte(Console.ReadLine());
             switch (opcionMenu)
             {
                 case 1:
@@ -32,8 +36,8 @@ internal class Program
                         byte opcionNotas = MisFunciones.MenuNotas();
                         if (opcionNotas != 0)
                         {
-                            student.RegistroNota(estudiantes, opcionNotas);
-                            MisFunciones.SaveData(estudiantes);
+                            student.RegistroNotas(estudiantes, opcionNotas);
+                            // MisFunciones.SaveData(estudiantes);
                         }
                         else
                         {
@@ -56,7 +60,7 @@ internal class Program
                             case 2:
                                 Console.Clear();
                                 break;
-                            case 3:
+                            case 0:
                                 cicloInformes = false;
                                 break;
                             default:
@@ -67,7 +71,7 @@ internal class Program
                         }
                     }
                     break;
-                case 4:
+                case 0:
                     cicloMenu = false;
                     break;
                 default:

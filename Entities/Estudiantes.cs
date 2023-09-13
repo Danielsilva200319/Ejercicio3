@@ -70,8 +70,12 @@ namespace Boletin.Entities
                     alumno.Parciales.Add(float.Parse(Console.ReadLine()));
                     break;
                 default:
+                    Console.WriteLine("Opción Inválida");
+                    Console.ReadKey();
                     break;
             }
+            int X = estudiantes.FindIndex(B => B.Codigo.Equals(CodigoStudent));
+            estudiantes[X] = alumno;
         }
     }
 }
